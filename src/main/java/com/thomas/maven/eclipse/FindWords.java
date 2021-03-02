@@ -13,7 +13,7 @@ public class FindWords
 	public static ArrayList<String> findWords(String input) throws IOException
 	{
 		permutations = new ArrayList<String>();
-		
+		input = input.toLowerCase();
 		char[] toSort = input.toCharArray();
 		Arrays.sort(toSort);
 		getPermutations("", new String(toSort));

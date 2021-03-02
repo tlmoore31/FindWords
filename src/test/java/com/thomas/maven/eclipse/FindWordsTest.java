@@ -36,7 +36,7 @@ public class FindWordsTest {
 	@Test
 	public void testFindWords() throws Throwable {
 		// When
-		String input = "super"; // UTA: default value
+		String input = "super";
 		ArrayList<String> result = FindWords.findWords(input);
 		
 		// Then
@@ -50,4 +50,24 @@ public class FindWordsTest {
 		assertTrue(result.contains("super"));
 		assertFalse(result.contains("apple"));
 	}
+	
+	@Test
+	public void testFindWords2() throws Throwable {
+		// When
+		String input = "sUpEr";
+		ArrayList<String> result = FindWords.findWords(input);
+		
+		// Then
+		assertNotNull(result);
+		assertEquals(6, result.size());		
+		assertTrue(result.contains("sup"));
+		assertTrue(result.contains("per"));
+		assertTrue(result.contains("up"));
+		assertTrue(result.contains("us"));
+		assertTrue(result.contains("use"));
+		assertTrue(result.contains("super"));
+		assertFalse(result.contains("apple"));
+	}
+	
+	
 }
